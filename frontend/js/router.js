@@ -12,7 +12,11 @@ AppRouter = Backbone.Router.extend({
         "projects/cascade" : "cascade",
         "projects/sgd" : "sgd",
         "projects/streamtools" : "streamtools",
-        "projects/citibike" : "citibike"
+        "projects/citibike" : "citibike",
+        "projects/cheers" : "cheers",
+        "projects/nafion_ele": "nafion_ele",
+        "projects/nafion": "nafion",
+        "projects/notepaper": "notepaper"
     },
 
     showNav: function() {
@@ -74,11 +78,27 @@ AppRouter = Backbone.Router.extend({
     citibike: function() {
         this.showNav();
         this.showView(new app.CitibikeView());
+    },
+
+    cheers: function() {
+        this.showNav();
+        this.showView(new app.CheersView());
+    },
+
+    nafion_ele: function() {
+        this.showNav();
+        this.showView(new app.NafionEleView());
+    },
+
+    nafion: function() {
+        this.showNav();
+        this.showView(new app.NafionView());
+    },
+
+    notepaper: function() {
+        this.showNav();
+        this.showView(new app.NotepaperView());
     }
-
-
-
-
 
 
 });
