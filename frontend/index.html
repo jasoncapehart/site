@@ -95,6 +95,7 @@
         <li>LinkedIn: <a href="http://www.linkedin.com/in/jasoncapehart/">Jason Capehart</a></li>
         <li>github: <a href="https://github.com/jasoncapehart">jasoncapehart</a></li>
         <li>Email: first name dot last name at gmail dot com</li>
+        <li>Defunct Blog: <a href="http://www.gagetheory.com/">Gage Theory</a></li>
       </ul>
     </div>
   </div>
@@ -105,15 +106,15 @@
 <script id="template_ricochet" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Ricochet View Rendered</h1>
-    </div>
-  </div>
-</script>
-
-<script id="template_cascade" type="text/template">
-  <div class="container">
-    <div class="starter-template">
-      <h1>The Cascade View Rendered</h1>
+      <h1>Ricochet Media</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <p><a href="http://ricochetmedia.net">Ricochet Media</a> is a Content Marketing product developed internally by the New York Times R&D Ventures team. My primary contribution was developing a suite of content discovery tools with <a href="www.linkedin.com/in/sagarh">Sagar Hatekar</a>, which included: an implementation of Google Custom Search, trending articles, news wires, and a recommendation engine. The recommendation engine was the most important feature in the suite. My favorite aspect of the recommendation engine was our ability to get good recommendations out of a simple architecture that was extremely cheap to run and almost as cheap to develop and maintain.</p>
+        </div>
+        <div class="col-md-8">
+          <img class="img-responsive" src="assets/img/RicochetRecommendations.jpg" alt="...">
+        </div>
+      </div>
     </div>
   </div>
 </script>
@@ -121,7 +122,30 @@
 <script id="template_sgd" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The SGD View Rendered</h1>
+      <h1>SGD for Go</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Stochastic Gradient Descent is a simple, fast, way to train models on large datasets. To me, SGD is the most sane alternative to modeling with Hadoop. Many algorithms don't fit well into the MapReduce concept, and even if they do, all training must be done in batch mode. SGD is perfect for streaming data and in non-streaming situations the mathematical and computational complexity is still greatly reduced. GoLang is fast and its concurrency model makes it a natural language for a go-to SGD library. <a href="https://github.com/jasoncapehart/go-sgd">Go-SGD</a> is an attempt to develop a Go package for this technique.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script id="template_cascade" type="text/template">
+  <div class="container">
+    <div class="starter-template">
+      <h1>Cascade Project</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Cascade was a Social Media Analytics product for publishers developed by the New York Times R&D team. <a href="http://nytlabs.com/projects/cascade.html">Cascade</a> started out as artful Processing visualization developed by Jer Thorp and Mark Hansen. The amount of attention the visualization received from advertisers and the publishing industry incited the Times to create a product around the visualization.</p> 
+<p><a href="http://nikhanselmann.com/">Nik Hanselmann</a> did an absolutely incredible job of turning the Processing demo into a WebGL visualization that could run in a browser. I joined the team to explore opportunities in the massive amounts of Twitter and Bitly data that were collected to build the visualizations.</p>
+<p>Although the New York Times stopped investing in the startup about 6 months after I arrived, I managed to make some modest contributions. We developed several different types of algorithms to detect "trending" stories on Twitter. Other interesting projects included predictive models for the number of clicks and retweets a tweet would receive, community detection via the Louvain method, and the architecture to calculate the net reach of both stories and collections of Twitter handles. I also identified best practices for journalists using Twitter, of which, the <a href="http://bits.blogs.nytimes.com/2012/08/09/how-to-make-a-dead-cat-bounce-on-twitter/">Dead Cat Bounce</a> probably had the distinction of being the most underwhelming and the most poorly named.</p> 
+          </div>
+          <div class="col-md-8">
+            <img class="img-responsive" src="assets/img/CascadeStories.jpg" alt="...">
+          </div>
+        </div>
     </div>
   </div>
 </script>
@@ -129,7 +153,14 @@
 <script id="template_stream_tools" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Stream Tools View Rendered</h1>
+      <h1>Stream Tools</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <p>The data must flow.</p>
+            <p>The reality is the data warehouse of the near future will be more a collection of data streams than a collection of data tables. <a href="https://github.com/nytlabs/streamtools">Stream Tools</a> is a fantastic project created by Mike Dewar and Nik Hanselmann that deserves to get a lot more help and attention than it has at the moment. My favorite thing about the project is I really think they got the philosophy and niche of the tool right. The reality is there aren't good tools available for doing prototyping work on streams. Python, beanstalkd, and redis are great tools - but by no means do they make for a quick and easy way to take a stream of data and learn something new. Stream tools addresses that problem and brings working with data streams to a wider audience.</p>
+            <p>My interest in Stream Tools is as a user of the tool. That means the things I have contributed and plan to contribute are things that I would like to use when working with streams like basic statistics (e.g. mean, st dev, scaling), sketches (e.g. count min sketch), and statistical modeling (which will hopefully come from the <a href="#projects/sgd">go-sgd</a> project).</p>
+        </div>
+      </div>
     </div>
   </div>
 </script>
@@ -142,10 +173,42 @@
   </div>
 </script>
 
+<script id="template_notepaper" type="text/template">
+  <div class="container">
+    <div class="starter-template">
+      <h1>Exponent Paper</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p>One of the themes I've consistently noticed in tutoring new algebra students is they struggle to use paper to their advantage. The classic mistake is trying to write too small, although there are a variety of common errors. Poor writing contributes to "dumb" mistakes (e.g. missing minus signs or confusing exponentiation with multiplication) which lead to frustration. This is a shame because we want to focus on on concepts, not mechanical bookkeeping.</p>
+          <p>Everyone who does math at the college level or beyond develops their own style: they learn to write smaller and more neatly, they ignore ruled lines, or they switch to blank or grid paper. Exponent paper is a design (though I cringe to call it that) I created to mimic what penmanship paper does for students who are learning to write. The purpose of the paper is to teach good writing habits for math.</p>
+          <ul>
+            <li>Uppercase, lowercase, superscript, and subscript notations are all clearly preserved in a consistent vertical order</li>
+            <li>Lines are sized to make it easy to write fractions on a single line, and the gutters help space each logical step for easier reading</li>
+            <li>The dash marks are appropriately spaced so they can be used to create tick marks for graphs</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="assets/img/ExponentPaper.jpg" alt="...">
+        </dvi>
+    </div>
+  </div>
+</script>
+
 <script id="template_cheers" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Cheers View Rendered</h1>
+      <h1>Cheers: Predicting Wine Quality</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Cheers was the inagural data mining contest for CrowdAnalytix. The challenge was to predict wine quality, as judged by experts, using only data from a basic chemistry panel. My model was the <a href="http://www.kdnuggets.com/2011/09/first-crowdanalytix-contest.html">winning submission</a>.</p>
+          <p>The model was a combination of a random forest and weighted-knn. My principle insight was that when an observation was very close to the class centroid for the weighted-knn, the weighted-knn model was more accurate than the random forest. This tweak was what provided the slight accuracy boost over the other competitors' models, which were primarily random forests with clever feature engineering.</p>
+          <p>The competition was fun and, for me, it was important because it helped me prove to myself that I could be successful in data science and compete with real experts despite my lack of education. That said, it also turned me off to data science competitions. The competition didn't generate any new tools or algorithms and a great deal of effort was spent by all the contestants to get tiny improvements in accuracy over fairly basic and naive models. Since then, the profileration of Kaggle hasn't done much to change my opinion. Most of the earlier competitions devolved into big ensemble models that <a href="http://techblog.netflix.com/2012/04/netflix-recommendations-beyond-5-stars.html">echoed the problems</a> with the winning solution to the Netflix prize (i.e. expensive models that would almost never make sense in practice). To their credit, some data science competitions have served as a "coming out" party for newer algorithms, for example with <a href="http://www.libfm.org/">factorization machines</a> or <a href="http://www.cs.toronto.edu/~hinton/">deep learning</a>.</p>
+          <p>I still happily endorse data science competitions for aspiring scientists and engineers because it's a great way to learn new tools and software, and to define a modeling workflow that works for you. Those skills are tightly related to what most data scientists do in their day-to-day work, even if the demands of most practical problems are different.</p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="assets/img/Cheers_RF.png" alt="...">
+        </div>
+      </div>
     </div>
   </div>
 </script>
@@ -153,7 +216,17 @@
 <script id="template_nafion_ele" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Nafion Electrolytic View Rendered</h1>
+      <h1>Phase Behavior of the Melting of Water in Nafion: Electrolytic Effects</h1>
+      <div class="row">
+        <div class="col-md-6">
+            <p>Full paper available <a href="assets/files/MeltingBehaviorOfWaterInNafion.pdf">here</a></p>
+            <h3>Abstract</h3>
+            <p>The melting behavior of water in Nafion was investigated.  Classical Poisson-Boltzmann theory for spherical micelles was used to show that solvated protons would be concentrated near the micelle, resulting in a proton-depleted region near the center. This ion depletion implies a small freezing point depression in the Nafion-water system compared to sulfuric acid-water mixtures at comparable lambda (the number of water molecules per SO3H group). Due to this depletion, water near the center of the Nafion cluster freezes first, producing phase segregation into ice core and a more concentrated shell of an acid-water solution in the periphery of the pore.</p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="assets/img/CPB_Estimate.jpg" alt="...">
+        </div>
+      </div>
     </div>
   </div>
 </script>
@@ -161,21 +234,20 @@
 <script id="template_nafion" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Nafion View Rendered</h1>
-      <img src="assets/img/YeagerSteckMorphology.jpg"/>
+      <h1>Phase Diagram for the Melting of Water in Nafion: Chemical and Physical Effects</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Full paper available <a href="assets/files/PhaseDiagramofWaterinNafion.pdf">here</a></p>
+          <h3>Abstract</h3>
+          <p>A variety of interactions between the polymer electrolyte membrane (PEM) Nafion and water result in the complex chemical and physical behavior of the hydrated membrane. These potential interactions include those due to the presence of acid groups on pore surfaces, nanoscale confinement of water, and pressure produced by the swelling of the PEM during hydration. To identify the relative importance of the acid, confinement, and pressure on the phase equilibrium of water, the phase behavior of water in Nafion was investigated at different levels of hydration using differential scanning calorimetry (DSC). The resulting melting endotherms have been analyzed to determine melting temperatures and enthalpies of fusion, mapping the liquidus and solidus lines over the range of adsorbed water between 4 to 18 water molecules per sulfonic acid group (lambda = 4 to 18). These results are then compared to measurements of the melting of water in binary solution with glycerol, sodium chloride, and sulfuric acid, identifying the characteristics of aqueous solutions of strong acids that distinguish them from polar or salt solutions. The correspondence of the low eutectic temperatures and reduction in the enthalpy of fusion of water adsorbed in Nafion and sulfuric acid-water solutions supports the electrolytic interaction between water and sulfonic acid groups of the membrane is identified as the principal mechanism controlling the phase equilibrium of water in these membranes. Remaining differences in the melting behavior of Nafion and sulfuric acid are attributed to differing electrolytic strengths of the anions and cation concentration gradients, although a secondary role of hydrostatic pressure produced as the PEM swells during hydration cannot be excluded. These measurements, comparisons, and analyses determine the liquidus and solidus phase lines, eutectic temperature and composition, and the primary mechanism controlling the phase behavior of water in the hydrophilic pores of Nafion, establishing its liquid-solid phase diagram below the eutectic concentration.</p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="assets/img/PhaseDiagram2.jpg" alt="...">
+        </div>
+      </div>
     </div>
   </div>
 </script>
-
-<script id="template_notepaper" type="text/template">
-  <div class="container">
-    <div class="starter-template">
-      <h1>The Notepaper View Rendered</h1>
-    </div>
-  </div>
-</script>
-
-
 
 <!-- Project Grid -->
 <!-- 
@@ -183,6 +255,7 @@
     GoLang SGD
     Cascade
     Stream Tools
+    Exponent Paper
     CitiBike
     Cheers
     ACS Paper
@@ -254,7 +327,7 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/PhaseTransition.jpg" alt="...">
+            <img data-src="holder.js/300x200" src="assets/img/PhaseDiagram.jpg" alt="...">
               <div class="caption">
                 <h3><a href="#projects/nafion_ele">Nafion: Electrolytic Effects</a></h3>
                 <p>ACS Preprint on the Phase Behavior of Nafion</p>
