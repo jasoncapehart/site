@@ -20,6 +20,8 @@
 <script src="js/lib/underscore-min.js"></script>
 <script src="js/lib/backbone-min.js"></script>
 <script src="dist/js/bootstrap.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+
 
 <!-- JS files -->
 <script src="js/app.js"></script>
@@ -38,6 +40,7 @@
 <script src="js/views/NafionEleView.js"></script>
 <script src="js/views/NafionView.js"></script>
 <script src="js/views/NotepaperView.js"></script>
+<script src="js/views/ClotView.js"></script>
 
 
 
@@ -102,6 +105,29 @@
 </script>
 
 <!-- Project Templates -->
+
+<script id="template_clot" type="text/template">
+  <div class="container">
+    <div class="starter-template">
+      <h1>Clot Score</h1>
+      <p>clot [klot]</p>
+      <p>noun</p>
+      <p>BRITISH. informal</p>
+      <p>A foolish or clumsy person.</p>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Klout received a lot of ridicule for giving everyone a score on how "important" they are in the world of social media. Klout drew my ire for a different reason: their flagship metric, the "Klout Score", is dumb. In observence of Klout's $100M acquisition this week, let me introduce the humble "Clot Score".</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Seriously. There's something here.</p>
+          <div id="clot_viz"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
 
 <script id="template_ricochet" type="text/template">
   <div class="container">
@@ -265,7 +291,17 @@
 <script id="template_grid" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h1>The Grid View Rendered</h1>
+      <h1>Projects</h1>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3><a href="#projects/clot">Clot Score</a></h3>
+              <p>Clot Score: like Klout, but less pretentious</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">

@@ -8,6 +8,7 @@ AppRouter = Backbone.Router.extend({
         "home" : "home",
         "projects" : "projects",
         "about" : "about",
+        "projects/clot" : "clot",
         "projects/ricochet" : "ricochet",
         "projects/cascade" : "cascade",
         "projects/sgd" : "sgd",
@@ -53,6 +54,11 @@ AppRouter = Backbone.Router.extend({
     about: function() {
         this.showNav();
         this.showView(new app.AboutView());
+    },
+
+    clot: function() {
+        this.showNav();
+        this.showView(new app.ClotView());
     },
 
     ricochet: function() {
