@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" type="text/css" href="assets/css/viz.css" media="screen"> 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!-- <link href="assets/css/styles.css" rel="stylesheet"> -->
 </head>
 <body>
@@ -112,13 +113,34 @@
     <div class="starter-template">
       <h1>Clot Score</h1>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <p>noun</p>
           <p>BRITISH. informal</p>
           <p>A foolish or clumsy person.</p>
-          <p>Klout received a lot of ridicule for giving everyone a score on how "important" they are in the world of social media. Klout drew my ire for a different reason: their flagship metric, the "Klout Score", is dumb. In observence of Klout's $100M acquisition this week, let me introduce the humble "Clot Score".</p>
+          <p>Now that Klout has successfully sold for $100M, I can't resist a parting shot.</p>
+<p>
+One of the telltale signs that an analytics company cares more about selling snake oil than science is that they've trademarked the name of a metric. Right from the start, Klout (http://klout.com/home) and their Klout Score (http://klout.com/corp/score) took fire from people who resented being "scored" on their social media presence.
+</p>
+<p>
+Klout drew my ire for completely different reasons. One, their Klout Score claimed to measure influence (i.e. "contagion") in social networks, when it almost certainly did nothing of the sort. Why do I say that? Because telling the difference between contagion and influence is a **causal** claim, and has been demonstrated to be a tough problem to figure out (http://arxiv.org/abs/1004.4704). If they very secretly and quitely solved this problem behind closed doors and put it into their metric, then they deserve every penny they got in the sale and more.
+</p>
+<p>
+But wait, that brings me to problem number two. Even if the Klout Score is a great metric, it doesn't add much value. Klout claims to measure (http://klout.com/corp/score) over 400 signals from 8 social networks every day, for a grand total of 12 billion data points per day. Wow. Impressive right? Sure. What if I wanted a poor man's Klout score though? If you were an idiot, a fool ... a clot, as the Brits might say - how would you do it? I've got my dunce cap on, so let me saddle up and give it a try.
+</p>
+<p>
+This is about influence, so I want the measure to have something to do with how many friends everyone has. I definitely want a score between 0-100 because it's easy to interpret and talk about. Social networks tend to have really heavy-tailed distributions and it'd be boring for everyone to have a low score, so I want to take a log or some other easy transformation to squish all the numbers together. Then I need to normalize everything somehow. That means I need a sensible constant. Let's face it, I'm a clot and will only look at Twitter data because it's easy to get. So, how many followers does the most popular Twitter user have? Looks like it's on the order of 10 million. Annnnd, yep ... I think we're done!
+</p>
+<p>
+Clot Score = log(# of Twitter Followers) / log(10^7) * 100
+</p>
+<p>
+To check out our Clot Score I grabbed a bunch of data on Twitter users and their Klout Scores. As you can see in the graph, there's an excellent correspondence. We could fit a linear regression and examine to what extent Clot predicts Klout, but I'll give up now before I take a silly joke too far.
+</p>
+<p>
+I refuse to worry about all the pretenders in the big data and data science bubble we're in because it'd leave me permanently snarky and, after all, I benefit from the bubble too. There is a point though where it feels outrageous not to point out the difference between those people harvesting what they've sown - and those robbing the blind.
+</p>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <div id="clot_viz"></div>
         </div>
       </div>

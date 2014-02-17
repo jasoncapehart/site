@@ -22,15 +22,16 @@ var app = app || {};
         var w = 500;
         var h = 500;
         var padding = 30;
+        var margin = 30;
         
         //Create scale functions
         var xScale = d3.scale.linear()
                              .domain([0, 100])
-                             .range([padding, w - padding]);
+                             .range([padding + margin, w - padding -margin]);
 
         var yScale = d3.scale.linear()
                              .domain([0, 100])
-                             .range([h - padding, padding]);
+                             .range([h - padding - margin, padding + margin]);
 
         //Define X axis
         var xAxis = d3.svg.axis()
@@ -47,8 +48,8 @@ var app = app || {};
         //Create SVG element
         var svg = d3.select("#clot_viz")
                     .append("svg")
-                    .attr("width", w)
-                    .attr("height", h);
+                    .attr("width", w + margin)
+                    .attr("height", h + margin);
 
         svg.selectAll("circle")
            .data(dataset)
@@ -98,10 +99,10 @@ var app = app || {};
 
         // Add a line
         svg.append("line")
-            .attr("x1", w-padding)
-            .attr("y1", padding)
-            .attr("x2", padding)
-            .attr("y2", h-padding)
+            .attr("x1", w-padding-margin)
+            .attr("y1", padding+margin)
+            .attr("x2", padding+margin)
+            .attr("y2", h-padding-margin)
             .attr("stroke-width", 3)
             .attr("stroke", "#0E51A7")
             .attr("opacity", 0.5); 
@@ -109,14 +110,30 @@ var app = app || {};
         //Create X axis
         svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(0," + (h - padding) + ")")
+            .attr("transform", "translate(0," + (h - padding - margin) + ")")
             .call(xAxis);
 
         //Create Y axis
         svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(" + padding + ",0)")
+            .attr("transform", "translate(" + (padding + margin) + ",0)")
             .call(yAxis);
+
+        // Create X axis label
+        svg.append("text")      // text label for the x axis
+            .attr("x", w / 2)
+            .attr("y", h)
+            .style("text-anchor", "middle")
+            .text("Clot Score");
+
+        // Create Y axis label
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0)
+            .attr("x", 0 - (h / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Klout Score");
 
        }
 
