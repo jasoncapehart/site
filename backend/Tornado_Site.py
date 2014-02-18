@@ -15,12 +15,10 @@ import os.path
 import sys
 from pymongo import MongoClient
 from tornado.options import define, options
-import time
-from datetime import date
 
 settings = {"debug":True}
 
-define("port", default=80, help="run on the given port", type=int)
+define("port", default=8000, help="run on the given port", type=int)
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -33,8 +31,11 @@ class ClotHandler(tornado.web.RequestHandler):
     def get(self):
         connection = MongoClient('localhost')
         db = connection['clot']
-        clot_dict = db.clot.find({})
-        self.write(json.dumps(clot_dict))
+        records = db.clot.find({})
+        clot_list = []
+        for record in records:
+            clot_list.append(record)
+        self.write(json.dumps(clot_list))
         self.finish()
 
     @tornado.web.asynchronous
@@ -47,13 +48,12 @@ class ClotHandler(tornado.web.RequestHandler):
         self.finish()
     
 
-
     
 if __name__ == "__main__":
     # tornado.options.parse_command_line()
     application = tornado.web.Application(
-        handlers = [(r"/", MainHandler), 
-                    (r"/ClotHandler", ClotHandler)
+        handlers = [(r"/api/", MainHandler), 
+                    (r"/api/ClotHandler", ClotHandler)
                    ],
         debug = True,
         template_path = os.path.join(os.path.dirname(__file__), "template"),
