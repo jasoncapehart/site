@@ -17,9 +17,6 @@ var app = app || {};
 
         // Load Data
         $.getJSON("http://jasoncapehart.com/api/ClotHandler", function(dataset) { 
-        // dataset = [[37.0, 40.2], [50.0, 46.5], [43.0, 39.5], [32.0, 46.4], [74.0, 62.3], [44.0, 42.2], [48.0, 49.7], [42.0, 38.9], [41.0, 45.1], [70.0, 68.3], [60.0, 47.8], [48.0, 43.9], [56.0, 39.6], [58.0, 45.1], [62.0, 50.3], [60.0, 57.8], [41.0, 39.8], [47.0, 46.6], [41.0, 31.9], [45.0, 43.1], [48.0, 39.8], [57.0, 37.4], [54.0, 40.2], [61.0, 53.0], [47.0, 40.0], [43.0, 37.9], [45.0, 42.9], [37.0, 42.0], [38.0, 41.6], [53.0, 44.3], [62.0, 45.7], [35.0, 44.3], [28.0, 19.5], [39.0, 38.8], [51.0, 36.6], [22.0, 28.8], [46.0, 42.8], [60.0, 42.1], [45.0, 43.3], [26.0, 38.4], [56.0, 46.7], [45.0, 46.8], [50.0, 41.0], [20.0, 25.5], [57.0, 54.8], [56.0, 52.7], [30.0, 44.5], [53.0, 53.4], [59.0, 49.1]]
-
-        console.log(dataset);
 
         //Width and height
         var w = 500;
@@ -84,12 +81,26 @@ var app = app || {};
 
         svg.selectAll("circle")
            .on("mouseover", function() {
+                //Get this bar's x/y values, then augment for the tooltip
+                var xPosition = parseFloat(d3.select(this).attr("cx"));
+                var yPosition = parseFloat(d3.select(this).attr("cy"));
+
                 d3.select(this)
                     .transition()
                     .duration(250)
                     .ease("linear")
                     .attr("r", 14)
                     .attr("fill", "#006C51");
+
+                d3.select("#tooltip")
+                    .style("left", xPosition + "px")
+                    .style("top", yPosition + "px")
+                    .select("#value")
+                    .text("Something");
+
+                //Show the tooltip
+                d3.select("#tooltip").classed("hidden", false);
+                
             })
            .on("mouseout", function() {
                 d3.select(this)
@@ -98,6 +109,9 @@ var app = app || {};
                     .ease("linear")
                     .attr("fill", "#41DB00")
                     .attr("r", 7);
+
+                d3.select("#tooltip").classed("hidden", true);
+
             });
 
         // Add a line
@@ -137,6 +151,26 @@ var app = app || {};
             .attr("dy", "1em")
             .style("text-anchor", "middle")
             .text("Klout Score");
+
+        /*
+        .on("mouseover", function(d) {
+            //Get this bar's x/y values, then augment for the tooltip
+            var xPosition = parseFloat(d3.select(this).attr("x"));
+            var yPosition = parseFloat(d3.select(this).attr("y"));
+
+            svg.append("text")
+                .attr("id", "tooltip")
+                .attr("x", xPosition)
+                .attr("y", yPosition)
+                .attr("text-anchor", "middle")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("font-weight", "bold")
+                .attr("fill", "black")
+                .text(d);
+           })
+          */
+
 
        });
 
