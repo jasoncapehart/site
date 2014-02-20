@@ -81,12 +81,6 @@ var app = app || {};
 
         svg.selectAll("circle")
            .on("mouseover", function(d) {
-                //Get tooltip x and y position
-                var xPosition = parseFloat(d3.select(this).attr("cx"))
-                     + document.getElementById("viz").offsetLeft - 150;
-                var yPosition = parseFloat(d3.select(this).attr("cy")) 
-                    + document.getElementById("viz").offsetTop - 30;
-
                 // Bubble Expansion
                 d3.select(this)
                     .transition()
@@ -96,18 +90,23 @@ var app = app || {};
                     .attr("fill", "#006C51");
 
                 // Tooltip
+                var xPosition = parseFloat(d3.select(this).attr("cx"))
+                     + document.getElementById("viz").offsetLeft - 100;
+                var yPosition = parseFloat(d3.select(this).attr("cy")) 
+                    + document.getElementById("viz").offsetTop - 50;
+
                 d3.select("#tooltip")
                     .style("left", xPosition + "px")
                     .style("top", yPosition + "px")
-                    .select("#screen_name")
-                    .text(function(dataset) {
-                        return d["screen_name"]
+                    .select("#tooltip_data")
+                    .html(function(dataset) {
+                        return "<p><strong>" + d["screen_name"] + "</strong></p><p>Clot: " + Math.round(d["clot_score"]) + "</p><p>Klout: " + Math.round(d["klout_score"]) + "</p>"
                     });
 
                 d3.select("#tooltip").classed("hidden", false);
-                
             })
            .on("mouseout", function() {
+                // Bubble Contraction
                 d3.select(this)
                     .transition()
                     .duration(250)
@@ -115,6 +114,7 @@ var app = app || {};
                     .attr("fill", "#41DB00")
                     .attr("r", 7);
 
+                // Remove Tooltip
                 d3.select("#tooltip").classed("hidden", true);
 
             });
@@ -156,26 +156,6 @@ var app = app || {};
             .attr("dy", "1em")
             .style("text-anchor", "middle")
             .text("Klout Score");
-
-        /*
-        .on("mouseover", function(d) {
-            //Get this bar's x/y values, then augment for the tooltip
-            var xPosition = parseFloat(d3.select(this).attr("x"));
-            var yPosition = parseFloat(d3.select(this).attr("y"));
-
-            svg.append("text")
-                .attr("id", "tooltip")
-                .attr("x", xPosition)
-                .attr("y", yPosition)
-                .attr("text-anchor", "middle")
-                .attr("font-family", "sans-serif")
-                .attr("font-size", "11px")
-                .attr("font-weight", "bold")
-                .attr("fill", "black")
-                .text(d);
-           })
-          */
-
 
        });
 
