@@ -80,11 +80,14 @@ var app = app || {};
             })
 
         svg.selectAll("circle")
-           .on("mouseover", function() {
-                //Get this bar's x/y values, then augment for the tooltip
-                var xPosition = parseFloat(d3.select(this).attr("cx"));
-                var yPosition = parseFloat(d3.select(this).attr("cy"));
+           .on("mouseover", function(d) {
+                //Get tooltip x and y position
+                var xPosition = parseFloat(d3.select(this).attr("cx"))
+                     + document.getElementById("viz").offsetLeft - 150;
+                var yPosition = parseFloat(d3.select(this).attr("cy")) 
+                    + document.getElementById("viz").offsetTop - 30;
 
+                // Bubble Expansion
                 d3.select(this)
                     .transition()
                     .duration(250)
@@ -92,13 +95,15 @@ var app = app || {};
                     .attr("r", 14)
                     .attr("fill", "#006C51");
 
+                // Tooltip
                 d3.select("#tooltip")
                     .style("left", xPosition + "px")
                     .style("top", yPosition + "px")
-                    .select("#value")
-                    .text("Something");
+                    .select("#screen_name")
+                    .text(function(dataset) {
+                        return d["screen_name"]
+                    });
 
-                //Show the tooltip
                 d3.select("#tooltip").classed("hidden", false);
                 
             })

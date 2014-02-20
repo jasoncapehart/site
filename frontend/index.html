@@ -111,8 +111,8 @@
 <script id="template_clot" type="text/template">
   <div class="container">
     <div id="tooltip" class="hidden">
-        <p><strong>Important Label Heading</strong></p>
-        <p><span id="value">100</span>%</p>
+        <p><strong><span id="screen_name"></span></strong></p>
+        <p><span id="value">100</span></p> 
     </div>
     <div class="starter-template">
       <h1>Clot Score</h1>
@@ -144,7 +144,7 @@ To check out our Clot Score I grabbed a bunch of data on Twitter users and their
 I refuse to worry about all the pretenders in the big data and data science bubble we're in because it'd leave me permanently snarky and, after all, I benefit from the bubble too. There is a point though where it feels outrageous not to point out the difference between those people harvesting what they've sown - and those robbing the blind.
 </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="viz">
           <div id="clot_viz"></div>
         </div>
       </div>
