@@ -100,7 +100,7 @@ var app = app || {};
                     .style("top", yPosition + "px")
                     .select("#tooltip_data")
                     .html(function(dataset) {
-                        return "<p><strong>" + d["screen_name"] + "</strong></p><p>Clot: " + Math.round(d["clot_score"]) + "</p><p>Klout: " + Math.round(d["klout_score"]) + "</p>"
+                        return "<p style='color:#006C51;'><strong>@" + d["screen_name"] + "</strong></p><p>Clot: " + Math.round(d["clot_score"]) + "</p><p>Klout: " + Math.round(d["klout_score"]) + "</p>"
                     });
 
                 d3.select("#tooltip").classed("hidden", false);
