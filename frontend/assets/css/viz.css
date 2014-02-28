@@ -44,3 +44,11 @@
     padding: 10px;
     margin-bottom: 10px;
 }
+
+.backdrop {
+    background-color: white;
+    opacity: 0.85;
+    border-radius: 10px;
+    width: 450px;
+    padding: 5px 20px 10px;
+}

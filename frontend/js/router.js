@@ -31,6 +31,9 @@ AppRouter = Backbone.Router.extend({
         console.log(view.el);
         // Close all views, except App view
         ViewManager.closeView();
+        //TODO: This is an ugly hack. This needs to be part of the ViewManger
+        $('.vegas-background').hide()
+        $('.vegas-overlay').hide()
         // Add the current view
         ViewManager.setCurrentView(view);
         // Add view
@@ -38,6 +41,8 @@ AppRouter = Backbone.Router.extend({
     },
 
     home: function() {
+        $('.vegas-background').show()
+        $('.vegas-overlay').show()
         this.showNav();
         this.showView(new app.HomeView());
         /*

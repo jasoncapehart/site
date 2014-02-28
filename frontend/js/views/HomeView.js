@@ -20,7 +20,7 @@ var app = app || {};
                     src:'assets/img/WatkinsGlen.jpg'
                 });
                 $.vegas('overlay', {
-                    src:'/vegas/overlays/13.png'
+                    src:'vegas/overlays/13.png'
                 });
             });
         }
