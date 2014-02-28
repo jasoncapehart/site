@@ -14,6 +14,15 @@ var app = app || {};
         render: function() {
             var home = _.template( $("#template_home").html(), {} );
             $(this.el).html(home);
+
+            $(function() {
+                $.vegas({
+                    src:'assets/img/WatkinsGlen.jpg'
+                });
+                $.vegas('overlay', {
+                    src:'/vegas/overlays/13.png'
+                });
+            });
         }
 
 	});
