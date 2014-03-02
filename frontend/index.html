@@ -98,14 +98,25 @@
 <script id="template_about" type="text/template">
   <div class="container">
     <div class="starter-template">
-      <h3>Here's how to find me:</h3>
-      <ul>
-        <li>Twitter: <a href="https://twitter.com/JasonTCapehart">@JasonTCapehart</a></li>
-        <li>LinkedIn: <a href="http://www.linkedin.com/in/jasoncapehart/">Jason Capehart</a></li>
-        <li>github: <a href="https://github.com/jasoncapehart">jasoncapehart</a></li>
-        <li>Email: first name dot last name at gmail dot com</li>
-        <li>Defunct Blog: <a href="http://www.gagetheory.com/">Gage Theory</a></li>
-      </ul>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Here's how to find me:</h3>
+          <ul>
+            <li>Twitter: <a href="https://twitter.com/JasonTCapehart">@JasonTCapehart</a></li>
+            <li>LinkedIn: <a href="http://www.linkedin.com/in/jasoncapehart/">Jason Capehart</a></li>
+            <li>github: <a href="https://github.com/jasoncapehart">jasoncapehart</a></li>
+            <li>Email: first name dot last name at gmail dot com</li>
+            <li>Defunct Blog: <a href="http://www.gagetheory.com/">Gage Theory</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Upcoming Talks:</h3>
+          <p>March 28th, 2014<br>
+            <strong><i>Fast, Scalable Comment Moderation via Active Learning</strong></i><br>
+            Machine Learning Symposium, NYAS
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </script>
@@ -277,9 +288,10 @@
       <h1>Phase Diagram for the Melting of Water in Nafion: Chemical and Physical Effects</h1>
       <div class="row">
         <div class="col-md-6">
-          <p>Full paper available <a href="assets/files/PhaseDiagramofWaterinNafion.pdf">here</a></p>
           <h3>Abstract</h3>
           <p>A variety of interactions between the polymer electrolyte membrane (PEM) Nafion and water result in the complex chemical and physical behavior of the hydrated membrane. These potential interactions include those due to the presence of acid groups on pore surfaces, nanoscale confinement of water, and pressure produced by the swelling of the PEM during hydration. To identify the relative importance of the acid, confinement, and pressure on the phase equilibrium of water, the phase behavior of water in Nafion was investigated at different levels of hydration using differential scanning calorimetry (DSC). The resulting melting endotherms have been analyzed to determine melting temperatures and enthalpies of fusion, mapping the liquidus and solidus lines over the range of adsorbed water between 4 to 18 water molecules per sulfonic acid group (lambda = 4 to 18). These results are then compared to measurements of the melting of water in binary solution with glycerol, sodium chloride, and sulfuric acid, identifying the characteristics of aqueous solutions of strong acids that distinguish them from polar or salt solutions. The correspondence of the low eutectic temperatures and reduction in the enthalpy of fusion of water adsorbed in Nafion and sulfuric acid-water solutions supports the electrolytic interaction between water and sulfonic acid groups of the membrane is identified as the principal mechanism controlling the phase equilibrium of water in these membranes. Remaining differences in the melting behavior of Nafion and sulfuric acid are attributed to differing electrolytic strengths of the anions and cation concentration gradients, although a secondary role of hydrostatic pressure produced as the PEM swells during hydration cannot be excluded. These measurements, comparisons, and analyses determine the liquidus and solidus phase lines, eutectic temperature and composition, and the primary mechanism controlling the phase behavior of water in the hydrophilic pores of Nafion, establishing its liquid-solid phase diagram below the eutectic concentration.</p>
+          <p>Full paper available <a href="assets/files/PhaseDiagramofWaterinNafion.pdf">here</a></p>
+
         </div>
         <div class="col-md-6">
           <img class="img-responsive" src="assets/img/PhaseDiagram2.jpg" alt="...">
@@ -306,10 +318,11 @@
   <div class="container">
     <div class="starter-template">
       <h1>Projects</h1>
+      <p>The projects listed below are a handful of successes, failures, or musings selected either because they're near and dear to my heart or a little different than my typical work.</p>
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/ClotViz.jpg" alt="...">
+            <a href="#projects/clot"><img data-src="holder.js/300x200" src="assets/img/ClotViz.jpg" alt="..."></a>
             <div class="caption">
               <h3><a href="#projects/clot">Clot Score</a></h3>
               <p>Clot Score: like Klout, but less pretentious</p>
@@ -320,7 +333,7 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/RicochetThumb.png" alt="...">
+            <a href="#projects/ricochet"><img data-src="holder.js/300x200" src="assets/img/RicochetThumb.png" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/ricochet">Ricochet Media</a></h3>
                 <p>Comment Recommendation Engine</p>
@@ -329,7 +342,7 @@
         </div>
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/SGD.jpg" alt="...">
+            <a href="#projects/sgd"><img data-src="holder.js/300x200" src="assets/img/SGD.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/sgd">SGD for Go</a></h3>
                 <p>Stochastic Gradient Descent for GoLang</p>
@@ -338,7 +351,7 @@
         </div>
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/CascadeViz.jpg" alt="...">
+            <a href="#projects/cascade"><img data-src="holder.js/300x200" src="assets/img/CascadeViz.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/cascade">Cascade Project</a></h3>
                 <p>Social Media Analytics</p>
@@ -349,7 +362,7 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/StreamTools.jpg" alt="...">
+            <a href="#projects/streamtools"><img data-src="holder.js/300x200" src="assets/img/StreamTools.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/streamtools">Stream Tools</a></h3>
                 <p>Tools for streaming data</p>
@@ -358,7 +371,7 @@
         </div>
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/ExponentPaper.jpg" alt="...">
+            <a href="#projects/notepaper"><img data-src="holder.js/300x200" src="assets/img/ExponentPaper.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/notepaper">Exponent Paper</a></h3>
                 <p>Notepaper designed for math</p>
@@ -367,7 +380,7 @@
         </div>
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/Cheers_VolatileAcidity.png" alt="...">
+            <a href="#projects/cheers"><img data-src="holder.js/300x200" src="assets/img/Cheers_VolatileAcidity.png" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/cheers">Cheers Competition</a></h3>
                 <p>Predicting Wine Quality from Chemistry Panels</p>
@@ -378,7 +391,7 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/PhaseDiagram.jpg" alt="...">
+            <a href="#projects/nafion_ele"><img data-src="holder.js/300x200" src="assets/img/PhaseDiagram.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/nafion_ele">Nafion: Electrolytic Effects</a></h3>
                 <p>ACS Preprint on the Phase Behavior of Nafion</p>
@@ -387,7 +400,7 @@
         </div>
         <div class="col-sm-3">
           <div class="thumbnail">
-            <img data-src="holder.js/300x200" src="assets/img/YeagerSteckMorphology.jpg" alt="...">
+            <a href="#projects/nafion"><img data-src="holder.js/300x200" src="assets/img/YeagerSteckMorphology.jpg" alt="..."></a>
               <div class="caption">
                 <h3><a href="#projects/nafion">Phase Diagram of Water in Nafion</a></h3>
                 <p>The Melting and Freezing of Water in Nafion</p> 
