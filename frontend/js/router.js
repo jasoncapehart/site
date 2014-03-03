@@ -28,7 +28,6 @@ AppRouter = Backbone.Router.extend({
     },
 
     showView: function(view) {
-        console.log(view.el);
         // Close all views, except App view
         ViewManager.closeView();
         //TODO: This is an ugly hack. This needs to be part of the ViewManger
