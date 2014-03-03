@@ -17,11 +17,13 @@ var app = app || {};
 
             $(function() {
                 $.vegas({
-                    src:'assets/img/WatkinsGlen.jpg'
+                    src:'assets/img/FallRiver.jpg'
                 });
+                /* TODO: Figure out how to keep the overlay when the page is re-rendered
                 $.vegas('overlay', {
                     src:'vegas/overlays/13.png'
                 });
+                */
             });
         }
 
