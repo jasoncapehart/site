@@ -12,7 +12,6 @@ var app = app || {};
 	},
 
 	render: function() {
-        console.log("Render NavView")
         var nav = _.template( $("#template_nav").html(), {} );
 	    $(this.el).html(nav);
 	}
