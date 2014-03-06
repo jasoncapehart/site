@@ -17,11 +17,12 @@ var app = app || {};
 
             $(function() {
                 $.vegas({
-                    src:'assets/img/FallRiver.jpg'
+                    src:'assets/img/Circuit_2d.jpg',
+                    valign:'20%'
                 });
-                /* TODO: Figure out how to keep the overlay when the page is re-rendered
+                /*
                 $.vegas('overlay', {
-                    src:'vegas/overlays/13.png'
+                    src:'../../vegas/overlays/13.png'
                 });
                 */
             });
