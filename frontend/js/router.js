@@ -1,5 +1,10 @@
 // Router
+/*
+TODO: There are 2 ugly hacks here that need to be fixed with the View Manager
+    - The vegas background should be toggled with the view manager, not in the showView() route
+    - The tab highlighting should be toggled with the view manager, not in the routes for each tab
 
+*/
 
 AppRouter = Backbone.Router.extend({
 
@@ -31,8 +36,7 @@ AppRouter = Backbone.Router.extend({
         // Close all views, except App view
         ViewManager.closeView();
         //TODO: This is an ugly hack. This needs to be part of the ViewManger
-        $('.vegas-background').hide()
-        $('.vegas-overlay').hide()
+        $('.vegas-background').hide();
         // Add the current view
         ViewManager.setCurrentView(view);
         // Add view
@@ -40,8 +44,10 @@ AppRouter = Backbone.Router.extend({
     },
 
     home: function() {
-        $('.vegas-background').show()
-        $('.vegas-overlay').show()
+        $('.vegas-background').show();
+        $('#nav a:contains("Home")').parent().addClass("active");
+        $('#nav a:contains("About")').parent().removeClass("active");
+        $('#nav a:contains("Projects")').parent().removeClass("active");
         this.showNav();
         this.showView(new app.HomeView());
         /*
@@ -51,11 +57,17 @@ AppRouter = Backbone.Router.extend({
     },
 
     projects: function() {
+        $('#nav a:contains("Home")').parent().removeClass("active");
+        $('#nav a:contains("About")').parent().removeClass("active");
+        $('#nav a:contains("Projects")').parent().addClass("active");
         this.showNav();
         this.showView(new app.GridView());
     },
 
     about: function() {
+        $('#nav a:contains("Home")').parent().removeClass("active");
+        $('#nav a:contains("About")').parent().addClass("active");
+        $('#nav a:contains("Projects")').parent().removeClass("active");
         this.showNav();
         this.showView(new app.AboutView());
     },
