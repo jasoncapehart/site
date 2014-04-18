@@ -173,7 +173,7 @@
       <h1>SGD for Go</h1>
         <div class="row">
           <div class="col-md-4">
-            <p>Stochastic Gradient Descent is a simple, fast, way to train models on large datasets. To me, SGD is the most sane alternative to modeling with Hadoop. Many algorithms don't fit well into the MapReduce concept, and even if they do, all training must be done in batch mode. SGD is perfect for streaming data and in non-streaming situations the mathematical and computational complexity is still greatly reduced. GoLang is fast and its concurrency model makes it a natural language for a go-to SGD library. <a href="https://github.com/jasoncapehart/go-sgd" target="_blank">Go-SGD</a> is an attempt to develop a Go package for this technique.</p>
+            <p>Stochastic Gradient Descent is a simple, fast, way to train models on streams or large datasets. It's the workhorse in almost all "big data" learning algorithms and is crucial to neural networks and deep learning. It's simple mathematically and has low computational costs. You can even abuse it and average parameters or do asynchronous updates and it still works. In other words, I like SGD. GoLang is fast and its concurrency model makes it a natural language for a go-to SGD library. <a href="https://github.com/jasoncapehart/go-sgd" target="_blank">Go-SGD</a> is an in-progres work to develop a Go package for this technique.</p>
           </div>
           <div class="col-md-6">
             <img class="img-responsive" src="assets/img/log_like.png" alt="...">
@@ -208,7 +208,7 @@
           <div class="col-md-4">
             <p>The data must flow.</p>
             <p>The reality is the data warehouse of the near future will be more a collection of data streams than a collection of data tables. <a href="https://github.com/nytlabs/streamtools" target="_blank">Stream Tools</a> is a fantastic project created by Mike Dewar and Nik Hanselmann that deserves to get a lot more help and attention than it has at the moment. My favorite thing about the project is I really think they got the philosophy and niche of the tool right. The reality is there aren't good tools available for doing prototyping work on streams. Python, beanstalkd, and redis are great tools - but by no means do they make for a quick and easy way to take a stream of data and learn something new. Stream tools addresses that problem and brings working with data streams to a wider audience.</p>
-            <p>My interest in Stream Tools is as a user of the tool. That means the things I have contributed and plan to contribute are things that I would like to use when working with streams like basic statistics (e.g. mean, st dev, scaling), sketches (e.g. count min sketch), and statistical modeling (which will hopefully come from the <a href="#projects/sgd">go-sgd</a> project).</p>
+            <p>My interest in Stream Tools is as a user of the tool. That means the things I have contributed and plan to contribute are things that I want to use when working with streams like basic statistics (e.g. mean, st dev, scaling), sketches (e.g. count min sketch), and statistical modeling the bulk of which Mike Dewar and I have addressed with the <a href="#projects/sgd">go-sgd</a> project).</p>
         </div>
       </div>
     </div>
